@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GZ Pedia</title> 
+    <style>  
+        *{
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+        body {
+            display: grid;
+            place-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas: 'navbar' 'content' 'hero' 'main' 'footer';
+            grid-template-columns: 100%;
+            grid-template-rows: 65px 100px 50px 850px 80px auto; 
+        }
+
+        .navbar {
+            z-index: 2;
+            position: sticky;
+            top: 0;
+            grid-area: navbar;
+            background: linear-gradient(to left, #50b83c, #2d831d, #1d5713);
+            color: #fff;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 60px 100px 100px 100px auto;
+            grid-auto-rows: 100%;
+            grid-template-areas: 'logo kategori logout search';
+        }
+
+        .navbar .kategori {
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            grid-area: kategori;
+            margin-top: 5px;
+        }
+
+        .navbar .logout {
+            font-size: 16px;
+            margin-right: 800px;
+            text-decoration: none;
+            color: white;
+            grid-area: logout;
+            margin-top: 5px;
+        }
+
+        .navbar .search-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            height: 30px;
+            width: 210px;
+            border-radius: 20px;
+            grid-area: search;
+            margin-left: 870px;
+
+        }
+
+        .navbar .search-container img {
+            margin-left: 10px;
+            /* Add some margin to separate the image from the input */
+            height: 20px;
+            /* Adjust the height as needed */
+        }
+
+        .navbar input[type="search"] {
+            padding: 5px;
+            border: none;
+            height: 20px;
+            width: 170px;
+            margin-right: 40px;
+            margin-left: 5px;
+            outline: none;
+            border-radius: 20px;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: rgb(233, 233, 233);
+            padding: 0px;
+            margin: 0;
+        }
+
+        .main {
+            grid-area: main;
+            width: 100%;
+            height: 400px;
+            margin-top: 349px;
+            display: grid;
+            grid-template-areas: 'sriwijaya' 'majapahit' 'singosari' 'kediri';
+            grid-template-columns: 100px 100px 100px 100px;
+            grid-template-rows: 100%;
+        }
+
+        .footer {
+            grid-area: footer;
+            padding: 0;
+            color: #fff;
+        }
+
+        img .landscape {
+            width: 500px;
+        }
+
+        .navbar a:hover {
+            color: #a2da75;
+        }
+
+        .logo {
+            margin-bottom: 2px;
+            margin-left: 5px;
+        }
+
+        .hero {
+            height: 500px;
+            background-image: url(hero1.png);
+            background-position-y: -100px;
+            grid-area: hero;
+        }
+
+        a {
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* carousell */
+        .kategori-scroll {
+            margin-top: 20px;
+            align-items: flex-start;
+            align-self: center;
+            display: flex;
+            height: 350px;
+            margin-left: 32px;
+            overflow: hidden;
+            overflow-x: scroll;
+            width: 1300px;
+
+        }
+
+        .kategori-scroll ::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        .majapahit {
+            padding: 10px;
+            cursor: pointer;
+            flex: 0 0 auto;
+            height: 300px;
+            margin-left: 20px;
+            width: 400px;
+            margin-top: 20px;
+        }
+
+        .sriwijaya {
+            padding: 10px;
+            cursor: pointer;
+            flex: 0 0 auto;
+            height: 300px;
+            margin-left: 20px;
+            width: 400px;
+            margin-top: 20px;
+         
+        }
+
+        .singosari {
+            padding: 10px;
+            cursor: pointer;
+            flex: 0 0 auto;
+            height: 300px;
+            margin-left: 20px;
+            width: 400px;
+            margin-top: 20px;
+           
+        }
+
+        .kediri {
+            padding: 10px;
+            cursor: pointer;
+            flex: 0 0 auto;
+            height: 300px;
+            margin-left: 20px;
+            width: 400px;
+            margin-top: 20px;
+            
+        }
+
+        .kategori-scroll img {
+            transition: transform 0.2s ease;
+        }
+
+        .kategori-scroll img:hover {
+            transform: scale(1.1);
+            
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img class="logo" src="logo.png" width="30" height="30">
+            <a href="#kategori" class="kategori">Kategori</a>
+            <a href="fnbv xnmbvkxmnb.html" class="logout">Logout</a>
+            <div class="search-container">
+                <img src="search-removebg-preview-removebg-preview.png" alt="Search Icon">
+                <input type="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="content">
+            <img class="hero" width="1366" height="730" alt="">
+        </div>
+        <div class="main">
+            <div class="kategori-scroll" id="kategori">
+                <a href="sriwijaya.html"><img src="sriwijaya kategori.png" alt="sejarah-berdirinya" class="sriwijaya"></a>
+                <a href="majapahit.html"><img src="majapahit kategori.png" alt="masa-kejayaan" class="majapahit"></a>
+                <a href="singosari.html"><img src="singosari kategori.png" alt="masa-keruntuhan" class="singosari"></a>
+                <a href="kediri.html"><img src="kediri kategori.png" alt="peninggalan" class="kediri"></a>
+            </div>
+        </div>
+        <div class="footer">
+                <footer style="  background: linear-gradient(to right, #2d831d, #1d5713); padding: 60px 0; font-family: 'Arial', sans-serif; text-align: center;">
+                    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start;">
+                    <div style="flex: 1; text-align: left;">
+                        <h2 style="color: #ffffff; font-size: 24px; margin-bottom: 10px;">Tentang Kami</h2>
+                        <p style="font-size: 16px;">Kami adalah perusahaan yang berkomitmen untuk memberikan solusi terbaik bagi kebutuhan Anda. Dengan pengalaman bertahun-tahun, kami hadir untuk memberikan layanan terbaik yang memenuhi harapan pelanggan.</p>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <h3 style="font-size: 20px;">Hubungi Kami</h3>
+                        <p>Email: abdigusti65@gmail.com</p>
+                        <p>Telepon: (+62) 8311-4042-493</p>
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <h3 style="font-size: 20px;">Ikuti Kami</h3>
+                        <div style="display: flex; justify-content: flex-end;">
+                        <a href="#" style="margin-right: 20px; transition: opacity 0.3s;"><img src="Facebook_Logo__White_PNG_Transparent_With_Clear_Background_ID_85768_png_-_Free_PNG_Images-removebg-preview (1).png" alt="Facebook Logo" style="width: 40px; height: 40px;"></a>
+                        <a href="#" style="margin-right: 20px; transition: opacity 0.3s;"><img src="tw-removebg-preview.png" alt="Twitter Logo" style="width: 40px; height: 40px;"></a>
+                        <a href="https://www.instagram.com/zeeckoooo/" style="transition: opacity 0.3s;"><img src="ig1-removebg-preview.png" alt="Instagram Logo" style="width: 40px; height: 40px;"></a>
+                        </div>
+                    </div>
+                    </div>
+                    <hr style="border: 1px solid #7ecc4a; margin: 30px 0;">
+                    <p style="font-size: 16px;">&copy; 2024 Nama Perusahaan. Hak Cipta Dilindungi. | <a href="#" style="color: #ffffff; text-decoration: none;">Kebijakan Privasi</a></p>
+                </footer>
+        </div>
+    </div>
+</body>
+
+</html>

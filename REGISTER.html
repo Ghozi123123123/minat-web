@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GZ Pedia</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+      p{
+        color: #FFFFFF;
+      }
+      .left {
+        flex: 1;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 70px;
+        color: #000000;
+      }
+      .right {
+        flex: 1;
+        background: linear-gradient(to bottom, #2d831d, #1d5713);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 70px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        color: #FFFFFF;
+      }
+      form {
+        width: 80%;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 12px;
+        border: none;
+        background-color: #cecbcb;
+      }
+      .signup1 .signup{
+        background-color: #cecbcb;
+        height: 40px;
+        width: 190px;
+        color: #000000;
+        padding: 12px 20px;
+        margin: 7px;
+        border-radius: 12px;
+        border: none;
+        cursor: poiner;
+      }
+      .signin1 .signin{
+        text-decoration: none;
+        background-color: white;
+        color: #000000;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+      }
+      .signin:hover {
+            background-color: #d3d3d3;
+        }
+        .signup:hover {
+            background-color: #d3d3d3;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <form action="proses_register.php" method="post">
+            <center> <h2 class="BUATAkun" >Buat Akun</h2></center>
+            <input type="text" name="username" size="30" placeholder="Username" required>
+            <input type="text" name="nama" size="30" placeholder="Nama" required>
+          <input type="password" id="password" name="password" required placeholder="Password" required/><br />
+        <center>
+          <div class="signup1">
+             <a href="KATEGORI.html">
+              <button type="submit" name="kirim" class="signup">Sign Up</button>
+             </a>
+        </div>
+        </center>
+        </form>
+      </div>
+      <div class="right">
+        <form>
+            <center>
+        <img src="logo.png" width="250" height="250">
+        <b><h2>Selamat Datang Kembali!</h2></b>
+        <p>Untuk tetap terhubung dengan kami,<br> silahkan masuk ke akun Anda.</p>
+        <div class="signin1">
+          <a href="LOGIN.html"><input type="button" value="Sign in" class="signin"></a>
+      </div>
+        </center>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+href login class signin

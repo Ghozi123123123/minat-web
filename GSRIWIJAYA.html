@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriwijaya</title>
+    <style>
+        body {
+            font-family: "Play", sans-serif;
+            font-weight: 200;
+            display: grid;
+            place-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .teks {
+    letter-spacing: 1px; /* Mengatur jarak antar huruf sebesar 1 piksel */
+}
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas: 'navbar' 'content' 'footer';
+            grid-template-columns: 100%;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            grid-area: navbar;
+            background: linear-gradient(to left, #50b83c, #2d831d, #1d5713);
+            color: #fff;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px 100px auto;
+            grid-auto-rows: 100%;
+            grid-template-areas: 'artikel kategori login signup search';
+        }
+
+        .navbar .artikel {
+            margin-left: 15px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            grid-area: artikel;
+            margin-top: 5px;
+        }
+
+        .navbar .kategori {
+            margin-left: 15px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            grid-area: kategori;
+            margin-top: 5px;
+        }
+
+        .navbar .login {
+            margin-left: 15px;
+            font-size: 16px;
+            margin-right: 800px;
+            text-decoration: none;
+            color: white;
+            grid-area: login;
+            margin-top: 5px;
+        }
+
+        .navbar .signup {
+            margin-left: 15px;
+            font-size: 16px;
+            margin-right: 800px;
+            text-decoration: none;
+            color: white;
+            grid-area: signup;
+            margin-top: 5px;
+        }
+
+        .navbar .search-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            height: 30px;
+            width: 210px;
+            border-radius: 20px;
+            grid-area: search;
+            margin-left: 700px;
+        }
+
+        .navbar .search-container img {
+            margin-left: 10px;
+            /* Add some margin to separate the image from the input */
+            height: 20px;
+            /* Adjust the height as needed */
+        }
+
+        .navbar input[type="search"] {
+            padding: 5px;
+            border: none;
+            height: 20px;
+            width: 170px;
+            margin-right: 50px;
+            margin-left: px;
+            outline: none;
+            border-radius: 20px;
+        }
+
+        .content {
+            grid-area: content;
+            padding: 50px;
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 400px;
+        }
+
+        .footer {
+            margin-top: 800px;
+            grid-area: footer;
+            color: #fff;
+            padding: 0;
+        }
+
+        .gambar1 {
+            float: right;
+        }
+
+        .gambar2 {
+            float: left;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .gambar3 {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .gambar4 {
+            float: left;
+            padding: 10px;
+        }
+
+        .gambar5 {
+            float: right;
+        }
+
+        a {
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: #a2da75;
+        }
+
+        .comment-container {
+            color: white;
+            margin-top: 500px;
+            margin-right: 200px;
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #215526 ;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-form label {
+            margin-bottom: 5px;
+        }
+
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .comment-form button {
+            background-color: #fff;
+            padding: 10px 20px;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .comment-form button:hover {
+            background-color: #b1b1b1;
+        }
+
+        .comment-list {
+            margin-top: 20px;
+        }
+
+        .comment {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .like-button {
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-color: black;
+        }
+
+        #like-count {
+            margin-left: 10px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="artikel">Artikel</a>
+            <a href="GKATEGORI.html" class="kategori">Kategori</a>
+            <a href="LOGIN.html" class="login">Login</a>
+            <a href="REGISTER.html" class="signup">Signup</a>
+            <div class="search-container">
+                <img src="search-removebg-preview-removebg-preview.png" alt="Search Icon">
+                <input type="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="content">
+            <center>
+                <h1>Kerajaan Sriwijaya</h1>
+            </center>
+            <div class="teks">
+            <div class="gambar1">
+                <img src="ASET SRIWIJAYA/peta kejayaan sriwijaya 1.png" width="300" height="200" alt="">
+            </div>
+            Kerajaan Sriwijaya lahir pada abad ke-7 Masehi dengan pendirinya yang bernama Dapunta Hyang Sri Jayanasa.
+            Keterangan ini tertulis pada salah satu prasasti yang ditemukan di Kota Kapur, Mendo Barat, Bangka. Namun,
+            kisah pendirian kerajaan ini merupakan salah satu bagian yang sulit dipecahkan oleh peneliti. Sebab dalam
+            sumber-sumber yang ditemukan tidak ada struktur genealogis yang tersusun rapi antar raja Sriwijaya.Letak
+            pasti kerajaan ini masih banyak diperdebatkan. Namun, pendapat yang cukup populer adalah yang dikemukakan
+            oleh G. Coedes pada tahun 1918 bahwa pusat Sriwijaya ada di Palembang. Sampai dengan saat ini, Palembang
+            masih dianggap sebagai pusat Sriwijaya. Beberapa ahli berkesimpulan bahwa Sriwijaya yang bercorak maritim
+            memiliki kebiasaan untuk berpindah-pindah pusat kekuasaan. Sebab para ahli ada yang menyimpulkan bahwa
+            Sriwijaya berpusat di Kedah, kemudian Muara Takus, hingga menyebut kota Jambi.
+            <div class="gambar2">
+                <img src="ASET SRIWIJAYA/masa-kejayaan-sriwijaya 1.png" width="300" height="200" alt="">
+            </div>
+            Raja Balaputradewa dianggap sebagai raja yang membawa Sriwijaya ke puncak kegemilangannya pada abad ke-8 dan
+            9. Namun pada dasarnya, kerajaan ini mengalami masa kekuasaan yang gemilang sampai ke generasi Sri
+            Marawijaya. Hal ini disebabkan raja-raja setelah Sri Marawijaya sudah disibukkan dengan peperangan melawan
+            Jawa pada 922 M dan 1016 M. Dilanjutkan dengan melawan Kerajaan Cola (India) pada tahun 1017 hingga 1025
+            Raja Sri Sanggramawijaya berhasil ditawan. Pada masa kekuasaan Balaputradewa sampai dengan Sri Marawijaya,
+            Kerajaan Sriwijaya menguasai Selat Malaka yang merupakan jalur utama perdagangan antara India dan
+            Cina.Selain itu, seperti yang dilansir dari buku Mengenal Kerajaan-Kerajaan Nusantara karya Deni Prasetyo,
+            mereka berhasil memperluas kekuasaannya hingga Jawa Barat, Kalimantan Barat, Bangka, Belitung, Malaysia,
+            Singapura, Thailand Selatan. Untuk menjaga keamanan itu, Sriwijaya membangun armada laut yang kuat. Sehingga
+            kapal-kapal asing yang ingin berdagang di Sriwijaya merasa aman dari gangguan perompak. Hingga lambat laun,
+            Sriwijaya berkembang menjadi negara maritim yang kuat.
+            <div class="gambar3">
+                <img src="ASET SRIWIJAYA/sriwijaya-runtuh 1.png" width="300" height="200" alt="">
+            </div>
+            Kebesaran Kerajaan Sriwijaya mulai mengalami kemunduran sejak abad ke-11. Berawal dari serangan
+            besar-besaran yang dilakukan oleh Raja Rajendra Coladewa dari kerajaan Cola yang berhasil menawan salah satu
+            raja Sriwijaya tersebut. Dikutip dari buku Sejarah karya Nana Supriatna, kemudian pada abad ke-13, salah
+            satu kerajaan taklukan Sriwijaya, Kerajaan Malayu, berhasil dikuasai Singasari, kerajaan dari Jawa yang
+            dipimpin oleh Kertanegara.
+            Melalui Ekspedisi Pamalayu, Kertanegara berhasil menjalin hubungan baik dengan Kerajaan Malayu. Sementara
+            itu, Kerajaan Sriwijaya mulai lemah dan tidak bisa berbuat apa-apa untuk mencegah negara taklukannya
+            menjalin hubungan dengan negara saingan di Jawa. Hingga kelemahan ini dimanfaatkan oleh Kerajaan Sukhodaya
+            dari Thailand di bawah Raja Kamheng. Wilayah Sriwijaya di Semenanjung Malaysia berhasil direbut sehingga
+            Selat Malaka bisa dikontrol. Akhir abad ke-14, Sriwijaya benar-benar runtuh akibat serangan Kerajaan
+            Majapahit dari Jawa. Berikut ini beberapa faktor yang menyebabkan runtuhnya Kerajaan Sriwijaya. Berulang
+            kali diserang Colamandala dari India, Terdesak Kerajaan Thailand dan Singasari, Banyak raja-raja taklukan
+            yang melepaskan diri, Mengalami kemunduran ekonomi dan perdagangan karena bandar-bandar pentingnya
+            melepaskan diri.
+            <div class="gambar4">
+                <img src="ASET SRIWIJAYA/raja sriwijaya 1.png" alt="" width="330" height="200">
+            </div>
+            Sebagaimana yang disampaikan sebelumnya bahwa struktur genealogis raja-raja Sriwijaya banyak terputus dan
+            hanya didukung bukti-bukti yang dianggap kurang kuat. Berikut ini adalah nama-nama raja Kerajaan Sriwijaya
+            yang sedikit banyak disepakati oleh para ahli setelah masa kekuasaan Dapunta Hyang Sri Jayanasa. Dapunta
+            Hyang Sri Jayanasa (683 M),
+            Indrawarman (702 M), Rudra Wikrama (728-742 M), Sanggramadhananjaya (775 M), Dharanindra/Rakai Panangkaran
+            (778 M), Samaragrawira/Rakai Warak (782 M), Dharmasetu (790 M), Samaratungga/Rakai Garung (792 M),
+            Balaputradewa (856 M), Sri Udayadityawarman (960 M), Sri Wuja atau Sri Udayaditya (961 M), Hse-she (980 M),
+            Sri Cudamani Warmadewa (988 M), Malayagiri/Suwarnadwipa (990 M), Sri Marawijayottunggawarman (1008 M),
+            Sumatrabhumi (1017 M), Sri Sanggrama Wijayatunggawarman (1025 M), Sri Dewa (1028 M), Dharmawira (1064 M),
+            Sri Maharaja (1156 M), Trailokyaraja Maulibhusana Warmadewa (1178 M).
+            <div class="gambar5">
+                <img src="ASET SRIWIJAYA/prasasti sriwijaya 1.png" alt="">
+            </div>
+            Peninggalan Kerajaan Sriwijaya yang pertama ini yaitu Prasasti Kedukan Bukit. Prasasti tersebut ditemukan di
+            tepi sungai Batang, Kedukan Bukit, Kota Palembang. Pada prasasti peninggalan Kerajaan Sriwijaya itu terdapat
+            angka tahun yakni 686 masehi yang ditulis menggunakan huruf Pallawa dan bahasa Sansekerta.
+            Peninggalan Kerajaan Sriwijaya yang lainnya adalah sebagai berikut:
+            Prasasti Kedukan Bukit,
+            Prasasti Talang Tuo,
+            Prasasti Telaga Batu,
+            Prasasti Kota Kapur,
+            Prasasti Karang Berahi,
+            Candi Biaro Bahal IIII,
+            Candi Muara Takus.
+        </div> <br> <br> <br> <br> <br> <br><br>
+        </div>
+        <div class="footer">
+            <footer style="  background: linear-gradient(to right, #2d831d, #1d5713); padding: 60px 0; font-family: 'Arial', sans-serif; text-align: center;">
+                <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start;">
+                <div style="flex: 1; text-align: left;">
+                    <h2 style="color: #ffffff; font-size: 24px; margin-bottom: 10px;">Tentang Kami</h2>
+                    <p style="font-size: 16px;">Kami adalah perusahaan yang berkomitmen untuk memberikan solusi terbaik bagi kebutuhan Anda. Dengan pengalaman bertahun-tahun, kami hadir untuk memberikan layanan terbaik yang memenuhi harapan pelanggan.</p>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <h3 style="font-size: 20px;">Hubungi Kami</h3>
+                    <p>Email: abdigusti65@gmail.com</p>
+                    <p>Telepon: (+62) 8311-4042-493</p>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <h3 style="font-size: 20px;">Ikuti Kami</h3>
+                    <div style="display: flex; justify-content: flex-end;">
+                    <a href="#" style="margin-right: 20px; transition: opacity 0.3s;"><img src="Facebook_Logo__White_PNG_Transparent_With_Clear_Background_ID_85768_png_-_Free_PNG_Images-removebg-preview (1).png" alt="Facebook Logo" style="width: 40px; height: 40px;"></a>
+                    <a href="#" style="margin-right: 20px; transition: opacity 0.3s;"><img src="tw-removebg-preview.png" alt="Twitter Logo" style="width: 40px; height: 40px;"></a>
+                    <a href="https://www.instagram.com/zeeckoooo/" style="transition: opacity 0.3s;"><img src="ig1-removebg-preview.png" alt="Instagram Logo" style="width: 40px; height: 40px;"></a>
+                    </div>
+                </div>
+                </div>
+                <hr style="border: 1px solid #7ecc4a; margin: 30px 0;">
+                <p style="font-size: 16px;">&copy; 2024 Nama Perusahaan. Hak Cipta Dilindungi. | <a href="#" style="color: #ffffff; text-decoration: none;">Kebijakan Privasi</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GZ Pedia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .login-container {
+            width: 400px;
+            padding: 20px;
+            background: linear-gradient(to bottom, #2d831d, #1d5713);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            text-align: center;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 13px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        
+        .button-container {
+            text-align: center;
+            color: black;
+        }
+        
+        button {
+            width: 50%;
+            padding: 10px;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .belum-container{
+            text-align: right;
+            color: white; 
+            margin-top: 70px;
+        }
+        button:hover {
+            background-color: #d3d3d3;
+        }
+        a .register{
+            color: white;
+            text-decoration: none;
+        }
+        button .logen{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+         <link rel="icon" type="image/x-icon" href="logo.png" />
+</head>
+<body>  
+    <div class="login-container">
+        <center>
+            <img src="logo.png" width="150" height="150">
+        </center>
+        <h2>Login</h2>
+        <form action="proses_login.php" method="POST" name="login">
+            <div class="form-group">
+                <input type="text" name="username" size="30" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" size="30" placeholder="Password" required>
+            </div>
+            <div class="button-container">
+                <a href="KATEGORI.html">
+                <button type="submit" name="kirim" class="signup">Sign Up</button>
+            </a>
+        </form>
+            </div>
+            <div class="belum-container">
+            <p>Belum Punya akun? <a href="REGISTER.html"><b class="register">Register</b></a></p>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singosari</title>
+    <style>
+        *{
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Play", sans-serif;
+            font-weight: 200;
+            display: grid;
+            place-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .teks {
+    letter-spacing: 1px; /* Mengatur jarak antar huruf sebesar 1 piksel */
+}
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas: 'navbar' 'content' 'footer';
+            grid-template-columns: 100%;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            grid-area: navbar;
+            background: linear-gradient(to left, #50b83c, #2d831d, #1d5713);
+            color: #fff;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 70px 100px 100px 100px 100px 100px auto;
+            grid-auto-rows: 100%;
+            grid-template-areas: 'like artikel kategori logout komentar chat search';
+        }
+        .chat{
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            grid-area: chat;
+            margin-top: 5px;
+        }
+        .navbar .like {
+            margin-left: 10px;
+        }
+
+        .navbar .artikel {
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            grid-area: artikel;
+            margin-top: 5px;
+        }
+
+        .navbar .kategori {
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            grid-area: kategori;
+            margin-top: 5px;
+        }
+
+        .navbar .logout {
+            font-size: 16px;
+            margin-right: 800px;
+            text-decoration: none;
+            color: white;
+            grid-area: logout;
+            margin-top: 5px;
+        }
+
+        .navbar .komentar {
+            font-size: 16px;
+            margin-right: 800px;
+            text-decoration: none;
+            color: white;
+            grid-area: komentar;
+            margin-top: 5px;
+        }
+
+        .navbar .search-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            height: 30px;
+            width: 210px;
+            border-radius: 20px;
+            grid-area: search;
+            margin-left: 550px;
+        }
+
+        .navbar .search-container img {
+            margin-left: 10px;
+            /* Add some margin to separate the image from the input */
+            height: 20px;
+            /* Adjust the height as needed */
+        }
+
+        .navbar input[type="search"] {
+            padding: 5px;
+            border: none;
+            height: 20px;
+            width: 170px;
+            margin-right: 40px;
+            margin-left: 5px;
+            outline: none;
+            border-radius: 20px;
+        }
+
+        .content {
+            font-size: 22px;
+            grid-area: content;
+            padding: 50px;
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 1000px;
+        }
+
+        .footer {
+            margin-top: 1000px;
+            grid-area: footer;
+            color: #fff;
+            padding: 0;
+        }
+
+        .gambar1 {
+            float: right;
+        }
+
+        .gambar2 {
+            float: left;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .gambar3 {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .gambar4 {
+            float: left;
+            padding: 10px;
+        }
+
+        .gambar5 {
+            float: right;
+        }
+
+        a {
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: #a2da75;
+        }
+
+        .comment-container {
+            color: white;
+            margin-top: 500px;
+            margin-right: 200px;
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #215526 ;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-form label {
+            margin-bottom: 5px;
+        }
+
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .comment-form button {
+            background-color: white;
+            padding: 10px 20px;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .comment-form button:hover {
+            background-color: #d5d6d4;
+        }
+
+        .comment-list {
+            margin-top: 20px;
+        }
+
+        .comment {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .like-button {
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            margin-right: 5px;
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-color: black;
+        }
+
+        #like-count {
+            margin-left: 10px;
+        }
+        .kirim-komentar{
+            width: 100px;
+            margin-left: 656px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="like-button">
+                <button class="like" id="like-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg></button>
+                <span id="like-count">0</span>
+            </div>
+            <a href="#" class="artikel">Artikel</a>
+            <a href="fnbv xnmbvkxmnb.html" class="logout">Logout</a>
+            <a href="KATEGORI.html" class="kategori">Kategori</a>
+            <a href="#komen" class="komentar">Komentar</a>
+            <a href="chat.html" class="chat">Chat</a>
+            <div class="search-container">
+                <img src="search-removebg-preview-removebg-preview.png" alt="Search Icon">
+                <input type="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="content">
+            <center>
+                <h1>Kerajaan Singosari</h1>
+            </center>
+            <div class="teks">
+            <div class="gambar1">
+                <img src="ASET SINGOSARI/gambar1.png" width="330" height="200" alt="">
+            </div>
+            Kerajaan Singosari adalah salah satu kerajaan yang pernah berdiri di Indonesia pada abad ke-13 hingga awal abad ke-14. Kerajaan ini memiliki sejarah yang menarik dan pernah menjadi salah satu kekuatan penting di pulau Jawa. Kerajaan Singosari terletak di Jawa Timur, Indonesia, dan didirikan pada tahun 1222 oleh Ken Arok, seorang tokoh yang cukup kontroversial dalam sejarah Jawa. Ken Arok mungkin awalnya adalah seorang budak atau prajurit rendahan, tetapi dia berhasil meraih kekuasaan dengan membunuh Tunggul Ametung, raja terakhir Kerajaan Kediri. Setelah kematian Tunggul Ametung, Ken Arok membangun kerajaan baru yang diberi nama Singosari.
+            <div class="gambar2">
+                <img src="ASET SINGOSARI/gambar2.png" width="300" height="200" alt="">
+            </div>
+            Masa kejayaan Kerajaan Singosari terutama terjadi pada masa pemerintahan Raja Kertanegara, yang memerintah antara tahun 1268 hingga 1292 M. Pada masa ini, Kerajaan Singosari mencapai puncak kekuasaannya dalam berbagai aspek, termasuk bidang politik, ekonomi, sosial, budaya, dan agama. Berikut adalah beberapa poin utama mengenai masa kejayaan Kerajaan Singosari:
+            Ekspansi Wilayah,
+            Pengembangan Kebudayaan, <br>
+            Pembangunan Infrastruktur
+            Agama Hindu-Buddha
+            Hubungan Internasional. <br>
+            <div class="gambar3">
+                <img src="ASET SINGOSARI/gambar3.png" width="300" height="200" alt="">
+            </div>
+            Keruntuhan Kerajaan Singosari terjadi pada abad ke-13 Masehi dan menyebabkan akhir dari kekuasaan kerajaan ini. Beberapa faktor utama yang berkontribusi terhadap keruntuhan Kerajaan Singosari adalah sebagai berikut:
+            Konflik Internal
+            Serangan dari Majapahit
+            Pembelotan dan Kebangkitan Kerajaan Majapahit
+            Setelah keruntuhan Kerajaan Singosari, Kerajaan Majapahit menjadi penguasa utama di Jawa dan mengalami masa kejayaan yang berlangsung hingga abad ke-15. Meskipun Singosari mungkin tidak memiliki masa kejayaan yang panjang, warisannya tetap terlihat dalam budaya, seni, dan arsitektur Jawa Timur, serta dalam studi sejarah Indonesia.
+            <div class="gambar4">
+                <img src="ASET SINGOSARI/gambar4.png" alt="" width="330" height="200">
+            </div>
+            Terdapat perbedaan antara Pararaton dan Negarakertagama dalam menyebutkan urutan raja-raja Singasari. Berikut daftar raja-raja Singasari versi Pararaton. Ken Arok alias Rajasa Sang Amurwabhumi (1222 - 1247 M) Anusapati (1247 - 1249 M) Tohjaya (1249 - 1250 M) Ranggawuni alias Wisnuwardhana (1250 - 1272 M) Kertanagara (1272 - 1292 M) Adapun daftar raja-raja Tumapel versi Nagarakretagama adalah sebagai berikut. Rangga Rajasa Sang Girinathaputra (1222 - 1227 M) Anusapati (1227 - 1248 M) Wisnuwardhana (1248 - 1254 M) Kertanagara (1254 - 1292 M)
+            <div class="gambar5">
+                <img src="ASET SINGOSARI/gambar5.png" width="400" height="150" alt="">
+            </div>
+            Meski telah runtuh sejak kepergian Kertanegara, masih ada banyak peninggalan Kerajaan Singasari yang tersisa sebagai tanda kemakurannya terdahulu. Masyarakat di wilayah Kerajaan Singasari, dahulunya banyak membuat arca atau patung. Berikut beberapa arca peninggalannya:Arca Ken Dedes, Arca Joko Dolok, Arca Dwarapala, Arca Wisnu Wardhana, Arca Anuspati, Arca Manjusri, Candi Jago, Candi Kidal,Candi Jawi, Candi Singosari
+        </div> <br> <br> <br> <br> <br> <br><br>
+            <section id="komen">
+                <div class="comment-container">
+                    <h2>Kolom Komentar</h2>
+                    <div class="comment-form">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" placeholder="Masukkan nama Anda">
+                        <label for="comment">Komentar:</label>
+                        <input type="text" id="comment" placeholder="Masukkan komentar Anda"></input>
+                        <button class="kirim-komentar" onclick="addComment()">Kirim</button>
+                    </div>
+                    <div class="comment-list">
+                        <!-- Daftar komentar akan ditampilkan di sini -->
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                // JavaScript untuk menambahkan komentar ke daftar komentar
+                function addComment() {
+                    var name = document.getElementById("name").value;
+                    var comment = document.getElementById("comment").value;
+
+                    if (name.trim() !== "" && comment.trim() !== "") {
+                        var commentList = document.querySelector(".comment-list");
+                        var commentDiv = document.createElement("div");
+                        commentDiv.className = "comment";
+                        commentDiv.innerHTML = "<strong>" + name + ":</strong> " + comment;
+                        commentList.appendChild(commentDiv);
+
+                        // Bersihkan input
+                        document.getElementById("name").value = "";
+                        document.getElementById("comment").value = "";
+                    }
+                }
+                let likeCount = 0;
+
+                // Mengambil elemen-elemen yang dibutuhkan
+                const likeButton = document.getElementById('like-button');
+                const likeCountElement = document.getElementById('like-count');
+
+                // Menambahkan event listener ke tombol "Like"
+                likeButton.addEventListener('click', () => {
+                    // Menambahkan satu like
+                    likeCount++;
+
+                    // Memperbarui tampilan jumlah like
+                    likeCountElement.textContent = likeCount;
+
+                    // Mengubah warna ikon menjadi merah
+                    likeButton.style.color = 'red';
+
+                    // Anda juga dapat mengirim data "like" ke server di sini jika diperlukan
+                    // atau menyimpan status like di basis data.
+                });
+            </script>
+        </div>
+        <div class="footer">
+            <footer style="  background: linear-gradient(to right, #2d831d, #1d5713); padding: 60px 0; font-family: 'Arial', sans-serif; text-align: center;">
+                <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start;">
+                  <div style="flex: 1; text-align: left;">
+                    <h2 style="color: #ffffff; font-size: 24px; margin-bottom: 10px;">Tentang Kami</h2>
+                    <p style="font-size: 16px;">Kami adalah perusahaan yang berkomitmen untuk memberikan solusi terbaik bagi kebutuhan Anda. Dengan pengalaman bertahun-tahun, kami hadir untuk memberikan layanan terbaik yang memenuhi harapan pelanggan.</p>
+                  </div>
+                  <div style="flex: 1; text-align: center;">
+                    <h3 style="font-size: 20px;">Hubungi Kami</h3>
+                    <p>Email: abdigusti65@gmail.com</p>
+                    <p>Telepon: (+62) 8311-4042-493</p>
+                  </div>
+                  <div style="flex: 1; text-align: right;">
+                    <h3 style="font-size: 20px;">Ikuti Kami</h3>
+                    <div style="display: flex; justify-content: flex-end;">
+                      <a href="#" style="margin-right: 20px; transition: opacity 0.3s;"><img src="Facebook_Logo__White_PNG_Transparent_With_Clear_Background_ID_85768_png_-_Free_PNG_Images-removebg-preview (1).png" alt="Facebook Logo" style="width: 40px; height: 40px;"></a>
+                      <a href="#" style="margin-right: 20px; transition: opacity 0.3s;"><img src="tw-removebg-preview.png" alt="Twitter Logo" style="width: 40px; height: 40px;"></a>
+                      <a href="https://www.instagram.com/zeeckoooo/" style="transition: opacity 0.3s;"><img src="ig1-removebg-preview.png" alt="Instagram Logo" style="width: 40px; height: 40px;"></a>
+                    </div>
+                  </div>
+                </div>
+                <hr style="border: 1px solid #7ecc4a; margin: 30px 0;">
+                <p style="font-size: 16px;">&copy; 2024 Nama Perusahaan. Hak Cipta Dilindungi. | <a href="#" style="color: #ffffff; text-decoration: none;">Kebijakan Privasi</a></p>
+              </footer>
+        </div>
+    </div>
+</body>
+
+</html>
